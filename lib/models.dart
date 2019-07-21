@@ -8,9 +8,6 @@ class UserModel extends ChangeNotifier {
   String get name => _name;
   set name(String value) {
     _name = value;
-    if (_name == "hacker") {
-      _name = "";
-    }
     notifyListeners();
   }
 }
