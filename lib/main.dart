@@ -19,9 +19,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Provider Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: SafeArea(child: LoginPage()),
       routes: {
         '/home': (context) => HomePage(),
