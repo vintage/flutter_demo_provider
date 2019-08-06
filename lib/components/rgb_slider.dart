@@ -1,19 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'color_slider.dart';
 import '../models.dart';
 
 class RGBSlider extends StatelessWidget {
+  Widget buildSlider(
+      String label, Color color, double value, Function onChanged) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        children: [
+          Text(label),
+          Slider(
+            value: value,
+            min: 0,
+            max: 255,
+            onChanged: onChanged,
+            activeColor: color,
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<ColorModel>(
       builder: (context, color, _) {
         return Column(
           children: [
-            ColorSlider(label: "Red", color: Colors.red, value: color.red, onChanged: (value) => color.red = value),
-            ColorSlider(label: "Green", color: Colors.green, value: color.green, onChanged: (value) => color.green = value),
-            ColorSlider(label: "Blue", color: Colors.blue, value: color.blue, onChanged: (value) => color.blue = value),
+            buildSlider(
+              "Red",
+              Colors.red,
+              color.red,
+              (value) => color.red = value,
+            ),
+            buildSlider(
+              "Green",
+              Colors.green,
+              color.green,
+              (value) => color.green = value,
+            ),
+            buildSlider(
+              "Blue",
+              Colors.blue,
+              color.blue,
+              (value) => color.blue = value,
+            ),
           ],
         );
       },
