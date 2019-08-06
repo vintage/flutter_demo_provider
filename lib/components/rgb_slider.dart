@@ -5,7 +5,7 @@ import '../models.dart';
 
 class RGBSlider extends StatelessWidget {
   Widget buildSlider(
-      String label, Color color, double value, Function onChanged) {
+      {String label, Color color, double value, Function onChanged}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(
@@ -30,22 +30,22 @@ class RGBSlider extends StatelessWidget {
         return Column(
           children: [
             buildSlider(
-              "Red",
-              Colors.red,
-              color.red,
-              (value) => color.red = value,
+              label: "Red",
+              color: Colors.red,
+              value: color.red,
+              onChanged: (value) => color.red = value,
             ),
             buildSlider(
-              "Green",
-              Colors.green,
-              color.green,
-              (value) => color.green = value,
+              label: "Green",
+              color: Colors.green,
+              value: color.green,
+              onChanged: (value) => color.green = value,
             ),
             buildSlider(
-              "Blue",
-              Colors.blue,
-              color.blue,
-              (value) => color.blue = value,
+              label: "Blue",
+              color: Colors.blue,
+              value: color.blue,
+              onChanged: (value) => color.blue = value,
             ),
           ],
         );
