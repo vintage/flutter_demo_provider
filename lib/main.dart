@@ -6,13 +6,15 @@ import 'pages/login_page.dart';
 import 'pages/details_page.dart';
 import 'pages/home_page.dart';
 
-void main() => runApp(MultiProvider(
-  providers: [
-    ChangeNotifierProvider(builder: (context) => UserModel()),
-    ChangeNotifierProvider(builder: (context) => ColorModel()),
-  ],
-  child: MyApp(),
-));
+void main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(builder: (context) => UserModel()),
+          ChangeNotifierProvider(builder: (context) => ColorModel()),
+        ],
+        child: MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   @override

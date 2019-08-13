@@ -13,11 +13,11 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-          child: Container(
-            width: 150,
-            child: TextField(controller: controller),
+            child: Container(
+              width: 150,
+              child: TextField(controller: controller),
+            ),
           ),
-      ),
           RaisedButton(
             child: Text("Login"),
             onPressed: () {
