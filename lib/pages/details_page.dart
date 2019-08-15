@@ -17,15 +17,22 @@ class DetailsPage extends StatelessWidget {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("R: ${color.red.round()} | "),
-                  Text("G: ${color.green.round()} | "),
-                  Text("B: ${color.blue.round()}"),
+                  Text("Red: ${color.red.round()} | "),
+                  Text("Green: ${color.green.round()} | "),
+                  Text("Blue: ${color.blue.round()}"),
                 ],
               );
             },
           ),
           GestureDetector(
-            child: RGBPreview(),
+            child: Container(
+              padding: EdgeInsets.only(top: 16),
+              width: 200,
+              height: 200,
+              child: ClipOval(
+                child: RGBPreview(),
+              ),
+            ),
             onTap: () {
               Navigator.pop(context);
             },
