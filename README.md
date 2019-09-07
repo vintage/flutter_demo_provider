@@ -1,4 +1,4 @@
-# flutter_demo_ads
+# Provider demo
 
 Demo app which presents usage of Provider package for state management in Flutter.
 
